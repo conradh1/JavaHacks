@@ -1,0 +1,227 @@
+import java.util.*;
+
+/*
+ Binary Tree Structure
+*/
+public class BinaryTree {
+
+  private Node root;
+  private int level;
+
+
+  // constructor
+  public BinaryTree()
+  {
+      level = 0;
+  }
+
+  // sets the root value
+  public void addNode(int value) {
+    Node newNode = new Node(value);
+    if ( root == null ) {
+      root = newNode;
+      level++;
+    }
+    else {
+      Node currentNode = root;
+      Node parent;
+      while ( true )  {
+        parent = currentNode;
+	if ( value < currentNode.value ) {
+	  currentNode = currentNode.left;
+	  if ( currentNode == null ) {
+	    level++;
+	    parent.left = newNode;
+	    return;
+	  }
+	}
+	else if ( value > currentNode.value ) {
+	  currentNode = currentNode.right;
+	  if ( currentNode == null ) {
+	    level++;
+	    parent.right = newNode;
+	    return;
+	  }
+	}
+      }
+
+    }
+  }
+
+  public int getLevel() {
+      return level;
+  }
+
+  /* Prints the binary tree per level
+  */
+  static public void printTree(Node root) {
+      Queue<Node> currentLevel = new LinkedList<Node>();  //Use a linked list to transverse down the tree.
+      Queue<Node> nextLevel = new LinkedList<Node>();
+
+      currentLevel.add(root);
+
+        // Go through the Linked List starting at the root until reaching the last node
+        // in terms of Big 0 search, it's juts O(n) going through each branch.
+        while (!currentLevel.isEmpty()) {
+            Iterator<Node> iter = currentLevel.iterator();
+            while (iter.hasNext()) {
+                Node currentNode = iter.next();
+                // add the next level to print
+                if (currentNode.left != null) {
+                    nextLevel.add(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    nextLevel.add(currentNode.right);
+                }
+                System.out.print(currentNode.value + " ");
+            }
+            System.out.println(); //end of level so print new line
+            currentLevel = nextLevel;
+            nextLevel = new LinkedList<Node>();
+
+        }
+  }
+
+
+  public void searchTree(int key) {
+    Node currentNode = root;
+    boolean found = false;
+    while ( currentNode != null) {
+      if ( key == currentNode.value ) {
+	found = true;
+	break;
+      }
+      else if ( key < currentNode.value ) {
+	  currentNode = currentNode.left;
+      }
+      else {
+	  currentNode = currentNode.right;
+	}
+    }
+    if ( found ) {
+      System.out.println("Found "+key);
+    }
+    else {
+      System.out.println(key+" Not Found.");
+    }
+  }
+
+
+  public int findMinimum(Node currentNode) {
+    if (currentNode == null)
+        return -1;
+
+    if (currentNode.left != null)
+        return findMinimum(currentNode.left);
+
+    return currentNode.value;
+
+  }
+  public boolean deleteNode (Node currentNode, int key) {
+
+    Node parent= null;
+    parent = currentNode;
+    if (currentNode == null) {	// empty tree or not in the tree
+	return false;
+    }
+    if ( currentNode.value == key ) {
+      // case no children
+      if ( currentNode.right == null && currentNode.left == null ) {
+	currentNode = null;
+	return true;
+      }
+      // case two children
+      else if ( currentNode.right != null && currentNode.left != null ) {
+	currentNode.value = findMinimumAndReturnWithDelete(currentNode.right);
+	return true;
+      }
+      // left or right child only
+      else if (  currentNode.left != null ) {
+	parent.left = currentNode.left;
+	currentNode = null;
+	return true;
+
+      }
+      else if ( currentNode.right != null  ) {
+	parent.right = currentNode.right;
+	currentNode = null;
+	return true;
+      }
+    }
+
+    if ( currentNode.value > key) {
+      return deleteNode(currentNode.left, key);
+    }
+    else {
+      return deleteNode(currentNode.right, key);
+    }
+  }
+
+  private int findMinimumAndReturnWithDelete(Node currentNode) {
+        if (currentNode.left == null) {
+            int i = currentNode.value;
+            currentNode = null;
+            return i;
+        }
+        return findMinimumAndReturnWithDelete(currentNode.left);
+  }
+
+  public void transverseTreeInOrder(Node currentNode) {
+    if ( currentNode != null ) {
+      transverseTreeInOrder(currentNode.left);
+      System.out.println(currentNode.value);
+      transverseTreeInOrder(currentNode.right);
+
+    }
+  }
+
+  public void transverseTreePreOrder(Node currentNode) {
+    if ( currentNode != null ) {
+      transverseTreePreOrder(currentNode.right);
+      System.out.println(currentNode.value);
+      transverseTreePreOrder(currentNode.left);
+
+    }
+  }
+
+  // Main will make a tree which is hard coded to the example
+  public static void main(String ar[]) {
+
+    BinaryTree b1 = new BinaryTree();
+    b1.addNode(8);
+    b1.addNode(4);
+    b1.addNode(5);
+    b1.addNode(3);
+    b1.addNode(7);
+    System.out.println("Node size: "+b1.getLevel());
+    b1.printTree(b1.root);
+    //System.out.println("Root: "+b1.root.value);
+    b1.searchTree(4);
+    //b1.transverseTreeInOrder(b1.root);
+    int deleteNum = 7;
+    System.out.println("Min Value: "+b1.findMinimum(b1.root));
+    b1.deleteNode(b1.root, deleteNum);
+    System.out.println("After Delete: "+deleteNum);
+    b1.printTree(b1.root);
+  }
+}
+
+
+
+class Node {
+  // reference to the next node in the chain,
+  // or null if there isn't one.
+    public int value; //Hold node value
+    public Node left; //branches
+    public Node right;
+
+
+    // Node constructor
+    public Node(int value) {
+  	  this.value = value;
+	  left = null;
+	  right = null;
+    }
+
+} //Node
+
