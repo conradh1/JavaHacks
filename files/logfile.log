@@ -1,0 +1,63 @@
+2015-09-02 15:41:35,651  Starting ./dxlayer deamon PID:22632
+2015-09-02 15:41:35,911  Found new fileset on datastore. BatchID: B00285718
+2015-09-02 15:41:37,167  Downloading from datastore file B00285718.tar.gz within BatchID B00285718.
+2015-09-02 15:41:37,207  Extracting Batch file B00285718.tar.gz from BatchID B00285718.
+2015-09-02 15:41:38,228  Validating Batch file B00285718.tar.gz from BatchID B00285718.  
+2015-09-02 15:41:40,454  Converting 00040998.FITS from FITS to CSV for BatchID B00285718.
+2015-09-02 15:41:45,363  Submitted batch S39_FW_B00285718 to ODM for loading. Response:  Batch Name: S39_FW_B00285718 Batch State: processing Message: ODM state: None
+2015-09-02 15:41:45,714  Found new fileset on datastore. BatchID: B00285722
+2015-09-02 15:41:46,552  Downloading from datastore file B00285722.tar.gz within BatchID B00285722.
+2015-09-02 15:41:46,601  Extracting Batch file B00285722.tar.gz from BatchID B00285722.
+2015-09-02 15:41:47,413  Validating Batch file B00285722.tar.gz from BatchID B00285722.  
+2015-09-02 15:41:47,433  Converting 00040999.FITS from FITS to CSV for BatchID B00285722.
+2015-09-02 15:41:51,167  Submitted batch S39_FW_B00285722 to ODM for loading. Response:  Batch Name: S39_FW_B00285722 Batch State: processing Message: ODM state: None
+2015-09-02 15:41:51,485  Found new fileset on datastore. BatchID: B00285724
+2015-09-02 15:41:52,269  Downloading from datastore file B00285724.tar.gz within BatchID B00285724.
+2015-09-02 15:41:52,324  Extracting Batch file B00285724.tar.gz from BatchID B00285724.
+2015-09-02 15:41:53,627  Validating Batch file B00285724.tar.gz from BatchID B00285724.  
+2015-09-02 15:41:53,649  Converting 00041000.FITS from FITS to CSV for BatchID B00285724.
+2015-09-02 15:41:58,316  Submitted batch S39_FW_B00285724 to ODM for loading. Response:  Batch Name: S39_FW_B00285724 Batch State: processing Message: ODM state: None
+2015-09-02 15:41:58,615  Found new fileset on datastore. BatchID: B00285727
+2015-09-02 15:42:00,290  Downloading from datastore file B00285727.tar.gz within BatchID B00285727.
+2015-09-02 15:42:00,345  Extracting Batch file B00285727.tar.gz from BatchID B00285727.
+2015-09-02 15:42:01,343  Validating Batch file B00285727.tar.gz from BatchID B00285727.  
+2015-09-02 15:42:01,359  Converting 00041001.FITS from FITS to CSV for BatchID B00285727.
+2015-09-02 15:42:06,082  Submitted batch S39_FW_B00285727 to ODM for loading. Response:  Batch Name: S39_FW_B00285727 Batch State: processing Message: ODM state: None
+2015-09-02 15:42:06,363  Found new fileset on datastore. BatchID: B00285729
+2015-09-02 15:42:06,976  Downloading from datastore file B00285729.tar.gz within BatchID B00285729.
+2015-09-02 15:42:07,023  Extracting Batch file B00285729.tar.gz from BatchID B00285729.
+2015-09-02 15:42:07,695  Validating Batch file B00285729.tar.gz from BatchID B00285729.  
+2015-09-02 15:42:07,712  Converting 00041002.FITS from FITS to CSV for BatchID B00285729.
+2015-09-02 15:42:10,780  Submitted batch S39_FW_B00285729 to ODM for loading. Response:  Batch Name: S39_FW_B00285729 Batch State: processing Message: ODM state: None
+2015-09-02 15:42:11,067  Found new fileset on datastore. BatchID: B00285733
+2015-09-02 15:42:11,676  Downloading from datastore file B00285733.tar.gz within BatchID B00285733.
+2015-09-02 15:42:11,719  Extracting Batch file B00285733.tar.gz from BatchID B00285733.
+2015-09-02 15:42:12,291  Validating Batch file B00285733.tar.gz from BatchID B00285733.  
+2015-09-02 17:53:43,845  Extracting Batch file B00288197.tar.gz from BatchID B00288197.  
+2015-09-02 17:53:45,181  Validating Batch file B00288197.tar.gz from BatchID B00288197.
+2015-09-02 17:53:45,182  Converting 00042206.FITS from FITS to CSV for BatchID B00288197.
+2015-09-02 17:53:50,153  Submitted batch S39_FW_B00288197 to ODM for loading. Response:  Batch Name: S39_FW_B00288197 Batch State: processing Message: ODM state: None
+2015-09-02 17:53:50,407  Found new fileset on datastore. BatchID: B00288198
+2015-09-02 17:53:50,986  Downloading from datastore file B00288198.tar.gz within BatchID B00288198.
+2015-09-02 17:53:51,069  Extracting Batch file B00288198.tar.gz from BatchID B00288198.  
+2015-09-02 17:53:52,209  Validating Batch file B00288198.tar.gz from BatchID B00288198.
+2015-09-02 17:53:52,210  Converting 00042207.FITS from FITS to CSV for BatchID B00288198.
+2015-09-02 17:53:57,125  Submitted batch S39_FW_B00288198 to ODM for loading. Response:  Batch Name: S39_FW_B00288198 Batch State: processing Message: ODM state: None
+2015-09-02 17:53:57,390  Found new fileset on datastore. BatchID: B00288199
+2015-09-02 17:53:57,903  Downloading from datastore file B00288199.tar.gz within BatchID B00288199.
+2015-09-02 17:53:57,975  Extracting Batch file B00288199.tar.gz from BatchID B00288199.  
+2015-09-02 17:53:59,019  Validating Batch file B00288199.tar.gz from BatchID B00288199.
+2015-09-02 17:53:59,020  Converting 00042243.FITS from FITS to CSV for BatchID B00288199.
+2015-09-02 17:54:03,475  Submitted batch S39_FW_B00288199 to ODM for loading. Response:  Batch Name: S39_FW_B00288199 Batch State: processing Message: ODM state: None
+2015-09-02 17:54:03,735  Found new fileset on datastore. BatchID: B00288200
+2015-09-02 17:54:04,250  Downloading from datastore file B00288200.tar.gz within BatchID B00288200.
+2015-09-02 17:54:04,322  Extracting Batch file B00288200.tar.gz from BatchID B00288200.  
+2015-09-02 17:54:05,482  Validating Batch file B00288200.tar.gz from BatchID B00288200.
+2015-09-02 17:54:05,483  Converting 00042244.FITS from FITS to CSV for BatchID B00288200.
+2015-09-02 17:54:09,755  Submitted batch S39_FW_B00288200 to ODM for loading. Response:  Batch Name: S39_FW_B00288200 Batch State: processing Message: ODM state: None
+2015-09-02 17:54:10,020  Found new fileset on datastore. BatchID: B00288201
+2015-09-02 17:54:10,767  Downloading from datastore file B00288201.tar.gz within BatchID B00288201.
+2015-09-02 17:54:10,839  Extracting Batch file B00288201.tar.gz from BatchID B00288201.  
+2015-09-02 17:54:11,880  Validating Batch file B00288201.tar.gz from BatchID B00288201.
+2015-09-02 17:54:11,881  Converting 00042245.FITS from FITS to CSV for BatchID B00288201.
+2015-09-02 17:54:16,375  Submitted batch S39_FW_B00288201 to ODM for loading. Response:  Batch Name: S39_FW_B00288201 Batch State: processing Message: ODM state: None                                                                                                                                                                                              4077,1        11
