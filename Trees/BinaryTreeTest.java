@@ -19,7 +19,7 @@ public class BinaryTreeTest {
     // build the simple tree from chapter 11.
     Node root = new Node(5);
     System.out.println("Binary Tree Example");
-    System.out.println("Building tree with root value " + root.value);
+    System.out.println("Building tree with root value " + root.value);    
 //     insertRecursion(root, 1);
 //     insertRecursion(root, 8);
 //     insertRecursion(root, 6);
@@ -28,12 +28,14 @@ public class BinaryTreeTest {
     insert(root, 1);
     insert(root, 8);
     insert(root, 6);
-    insert(root, 3);
     insert(root, 9);
-    System.out.println("Traversing tree in order");
-    printInOrder(root);
-    System.out.println("Traversing tree front-to-back from location 7");
-    printFrontToBack(root, 7);
+    insert(root, 4);
+    System.out.println("Finding max value: "+findMax(root));
+    System.out.println("Finding min value: "+findMin(root));
+//     System.out.println("Traversing tree in order");
+//     printInOrder(root);
+//     System.out.println("Traversing tree front-to-back from location 7");
+//     printFrontToBack(root, 7);
   }
   
   public void insert(Node node, int value) {
@@ -60,7 +62,30 @@ public class BinaryTreeTest {
      else 
       parent.right = newNode;
   }
-
+  
+  public void delete(Node node, int value) {
+     Node tmpNode = node;
+     Node parent = null;
+     
+     if ( node == null ) {      
+      return;
+     }
+               
+     while ( tmpNode != null ) {
+      parent = tmpNode;
+      if ( value < tmpNode.value ) 
+        tmpNode = tmpNode.left;
+      else if ( value > tmpNode.value ) 
+        tmpNode = tmpNode.right;      
+      else if ( value == tmpNode.value ) {
+        // assign parent to left/right nodes
+        parent.left = tmpNode.left;
+        parent.right = tmpNode.right;      
+      }
+        
+     }     
+  }
+  
   public void insertRecursion(Node node, int value) {
     if (value < node.value) {
       if (node.left != null) {
@@ -78,6 +103,50 @@ public class BinaryTreeTest {
         node.right = new Node(value);
       }
     }
+  }
+  
+  public int findMax(Node node) {
+     Node tmpNode = node;
+     int maxValue = -1;
+          
+     if ( node == null ) {
+      return -1;
+     }
+     else 
+       maxValue = tmpNode.value;
+                    
+     while ( tmpNode != null ) {
+      if ( maxValue <= tmpNode.value ) {
+        maxValue = tmpNode.value;
+        tmpNode = tmpNode.right;        
+      }     
+      else {        
+        tmpNode = tmpNode.left;      
+      }
+     }
+     return maxValue;
+  }
+  
+  public int findMin(Node node) {
+     Node tmpNode = node;
+     int minValue = -1;
+          
+     if ( node == null ) {
+      return -1;
+     }
+     else 
+       minValue = tmpNode.value;
+                    
+     while ( tmpNode != null ) {
+      if ( minValue >= tmpNode.value ) {
+        minValue = tmpNode.value;
+        tmpNode = tmpNode.left;        
+      }     
+      else {        
+        tmpNode = tmpNode.right;      
+      }
+     }
+     return minValue;
   }
 
   public void printTree( Node node ) {
