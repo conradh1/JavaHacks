@@ -31,13 +31,9 @@ public class TreeInOrderTraversal {
     System.out.println("");
   }
 
-  public void Inorder(Node node) {
-    if (node.left != null) 
-        Inorder(node.left);    
-    System.out.print(node.data+" ");         
-    if (node.right != null )              
-        Inorder(node.right);   
-            
+  int findHeight(node) {
+    if (node == null) return 0;
+    return 1 + max(findHeight(node.left), findHeight(node.right));
   }
 
 }
