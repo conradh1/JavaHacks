@@ -207,6 +207,35 @@ public class BinaryTree {
     return maxValue;
   }
   
+  public void printTree( Node node ) {
+    Queue<Node> currentLevel = new LinkedList<Node>();  //Use a linked list to transverse down the tree.
+    Queue<Node> nextLevel = new LinkedList<Node>();
+
+    if ( node == null )
+      return;
+      
+    currentLevel.add(node);
+
+    // Go through the Linked List starting at the root until reaching the last node
+    // in terms of Big 0 search, it's juts O(n) going through each branch.
+    while (!currentLevel.isEmpty()) {
+      Iterator<Node> iter = currentLevel.iterator();
+      while (iter.hasNext()) {
+          Node currentNode = iter.next();
+          // add the next level to print
+          if (currentNode.left != null) {
+              nextLevel.add(currentNode.left);
+          }
+          if (currentNode.right != null) {
+              nextLevel.add(currentNode.right);
+          }
+          System.out.print(currentNode.value + " ");
+      }
+      System.out.println(); //end of level so print new line
+      currentLevel = nextLevel;
+      nextLevel = new LinkedList<Node>();
+    }
+  }
   
  
   // Main will make a tree which is hard coded to the example
@@ -218,7 +247,9 @@ public class BinaryTree {
     b.add(7);
     b.add(1);
     b.add(9);
+    b.add(6);
     b.add(2);
+    b.add(0);
     System.out.println("Printing PreOrder-Transversal");
     b.printPreOrderTransversal(root);
     System.out.println("");
@@ -228,6 +259,7 @@ public class BinaryTree {
     System.out.println("Tree Height"+b.findHeight(root));
     System.out.println("Tree Max Value "+b.findMaxValue(root));
     System.out.println("Found 2 in Tree?: "+b.searchTree(root,2));
+    b.printTree(root);
     
     
   }

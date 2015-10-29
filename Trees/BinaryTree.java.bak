@@ -78,7 +78,6 @@ public class BinaryTree {
             System.out.println(); //end of level so print new line
             currentLevel = nextLevel;
             nextLevel = new LinkedList<Node>();
-
         }
   }
 
