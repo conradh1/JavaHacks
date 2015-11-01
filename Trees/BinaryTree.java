@@ -213,7 +213,7 @@ public class BinaryTree {
 
     if ( node == null )
       return;
-      
+
     currentLevel.add(node);
 
     // Go through the Linked List starting at the root until reaching the last node
