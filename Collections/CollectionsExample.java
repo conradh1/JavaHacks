@@ -34,6 +34,9 @@ public class CollectionsExample {
      myhash.put('b', Character.getNumericValue('b'));
      myhash.put('c', Character.getNumericValue('c'));
      
+     if ( myhash.containsKey('c') ) {
+       System.out.println("Contains leter c.");
+     }
      Set<Character> keys = myhash.keySet();
      for (Character c : keys) {
       System.out.print(c);
