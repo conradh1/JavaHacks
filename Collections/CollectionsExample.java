@@ -21,7 +21,7 @@ public class CollectionsExample {
       while (iter.hasNext()) {      // any more element
          // Retrieve the next element, explicitly downcast from Object back to String
          String str = (String)iter.next();
-         System.out.println(str);        
+         System.out.println(str);
       }
       myList.clear();
     }
@@ -42,12 +42,12 @@ public class CollectionsExample {
       System.out.print(c);
       System.out.print(":");
       System.out.println(myhash.get(c));
-     }    
+     }
     }
-    
+
     public static void stackExample() {
       Stack<Integer> mystack = new Stack<Integer>();
-      
+
       System.out.println("Doing Stack example.");
       System.out.println("Pushing 1-4.");
       mystack.push(1);
@@ -63,12 +63,12 @@ public class CollectionsExample {
     }
     
     public static void queueExample() {
-      Queue<Integer> queue = new LinkedList<Integer>();
+      Queue<Integer> queue = new ArrayDeque<Integer>();
       for (int i = 0; i < 5; i++)
-            queue.add(i);
+            queue.offer(i);
 
         while (!queue.isEmpty()) {
-            System.out.println(queue.remove());
+            System.out.println(queue.poll());
         }
     
     }
@@ -76,5 +76,6 @@ public class CollectionsExample {
         arrayListExample();
         hashTableExample();
         stackExample();
+        queueExample();
     }
 }
